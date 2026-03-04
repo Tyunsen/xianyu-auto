@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__exa__web_search_exa",
+      "mcp__github__search_repositories",
+      "mcp__tavily__tavily_search"
+    ]
+  }
+}
