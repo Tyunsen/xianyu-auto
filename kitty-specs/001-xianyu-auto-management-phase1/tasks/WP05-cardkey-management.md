@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP05"
-title: "卡密管理模块（后端）"
-lane: "planned"
-dependencies: ["WP02"]
-subtasks: ["T019", "T020", "T021", "T022"]
+work_package_id: WP05
+title: 卡密管理模块（后端）
+lane: "doing"
+dependencies: [WP02]
+base_branch: 001-xianyu-auto-management-phase1-WP02
+base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
+created_at: '2026-03-05T07:06:12.874352+00:00'
+subtasks: [T019, T020, T021, T022]
+shell_pid: "24440"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP05: 卡密管理模块（后端）
