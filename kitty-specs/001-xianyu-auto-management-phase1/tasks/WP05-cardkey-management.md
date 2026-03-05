@@ -1,13 +1,13 @@
 ---
 work_package_id: WP05
 title: 卡密管理模块（后端）
-lane: "for_review"
+lane: "doing"
 dependencies: [WP02]
 base_branch: 001-xianyu-auto-management-phase1-WP02
 base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
 created_at: '2026-03-05T07:06:12.874352+00:00'
 subtasks: [T019, T020, T021, T022]
-shell_pid: "24440"
+shell_pid: "46948"
 agent: "claude-code"
 history:
 - date: '2026-03-05'
@@ -78,3 +78,4 @@ spec-kitty implement WP05 --base WP02
 
 - 2026-03-05T07:06:15Z – claude-code – shell_pid=24440 – lane=doing – Assigned agent via workflow command
 - 2026-03-05T07:07:49Z – claude-code – shell_pid=24440 – lane=for_review – Ready for review: 卡密管理后端模块已完成
+- 2026-03-05T08:02:11Z – claude-code – shell_pid=46948 – lane=doing – Started review via workflow command
