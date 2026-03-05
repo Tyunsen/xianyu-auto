@@ -1,7 +1,7 @@
 ---
 work_package_id: WP01
 title: 项目基础设置
-lane: "doing"
+lane: "for_review"
 dependencies: []
 base_branch: master
 base_commit: 6a45668897f403c3a61fce4c2b3d5a30dc1b41ce
@@ -302,3 +302,4 @@ spec-kitty implement WP01
 ## Activity Log
 
 - 2026-03-05T05:57:10Z – claude – shell_pid=32364 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T06:04:03Z – claude – shell_pid=32364 – lane=for_review – Ready for review: 项目基础设置完成
