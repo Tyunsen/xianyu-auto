@@ -61,15 +61,33 @@ const rules = {
 const handleLogin = async () => {
   if (!loginFormRef.value) return
 
-  await loginFormRef.value.validate((valid) => {
+  await loginFormRef.value.validate(async (valid) => {
     if (valid) {
       loading.value = true
-      // TODO: 实现登录逻辑
-      setTimeout(() => {
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(loginForm)
+        })
+        const data = await res.json()
+        if (res.ok) {
+          localStorage.setItem('admin_token', data.token)
+          localStorage.setItem('admin_info', JSON.stringify({
+            id: data.id,
+            username: data.username,
+            nickname: data.nickname
+          }))
+          ElMessage.success('登录成功')
+          router.push('/home')
+        } else {
+          ElMessage.error(data.detail || '登录失败')
+        }
+      } catch (e) {
+        ElMessage.error('登录失败，请检查网络')
+      } finally {
         loading.value = false
-        ElMessage.success('登录成功')
-        router.push('/home')
-      }, 1000)
+      }
     }
   })
 }

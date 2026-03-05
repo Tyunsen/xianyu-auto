@@ -7,6 +7,7 @@ from app.models.log import Log, LogLevel, LogType
 from app.models.alert import Alert, AlertStatus, AlertType
 from app.models.setting import Setting
 from app.models.blacklist import Blacklist
+from app.models.admin import Admin
 
 __all__ = [
     "Account",
@@ -26,4 +27,5 @@ __all__ = [
     "AlertType",
     "Setting",
     "Blacklist",
+    "Admin",
 ]

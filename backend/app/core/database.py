@@ -20,6 +20,15 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
+def init_db():
+    """初始化数据库表"""
+    from app.models import (
+        Account, Product, Card, Order, Message,
+        Log, Alert, Setting, Blacklist, Admin
+    )
+    Base.metadata.create_all(bind=engine)
+
+
 def get_db():
     """获取数据库会话"""
     db = SessionLocal()
