@@ -8,6 +8,7 @@ base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
 created_at: '2026-03-05T07:06:12.874352+00:00'
 subtasks: [T019, T020, T021, T022]
 shell_pid: "24440"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -72,3 +73,7 @@ async def get_card_key_stats(product_id: int, db: Session = Depends(get_db)):
 ```bash
 spec-kitty implement WP05 --base WP02
 ```
+
+## Activity Log
+
+- 2026-03-05T07:06:15Z – claude-code – shell_pid=24440 – lane=doing – Assigned agent via workflow command
