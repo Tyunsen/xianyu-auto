@@ -8,6 +8,7 @@ base_commit: bb16aba76afd2b0a23c9ee06ed95f03f4b8e67a1
 created_at: '2026-03-05T06:50:27.801681+00:00'
 subtasks: [T006, T007, T008, T009, T010]
 shell_pid: "35376"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -357,3 +358,7 @@ history:
 # 依赖 WP01
 spec-kitty implement WP02 --base WP01
 ```
+
+## Activity Log
+
+- 2026-03-05T06:50:30Z – claude-code – shell_pid=35376 – lane=doing – Assigned agent via workflow command
