@@ -1,13 +1,14 @@
 ---
 work_package_id: WP03
 title: 账号管理模块（后端）
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02]
 base_branch: 001-xianyu-auto-management-phase1-WP02
 base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
 created_at: '2026-03-05T06:58:21.881132+00:00'
 subtasks: [T011, T012, T013, T014]
 shell_pid: "37996"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -251,3 +252,8 @@ history:
 ```bash
 spec-kitty implement WP03 --base WP02
 ```
+
+## Activity Log
+
+- 2026-03-05T06:58:23Z – claude-code – shell_pid=37996 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:03:05Z – claude-code – shell_pid=37996 – lane=for_review – Ready for review: 账号管理后端模块已完成
