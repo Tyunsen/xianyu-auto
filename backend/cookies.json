@@ -1,0 +1,126 @@
+{
+  "cookies": [
+    {
+      "name": "cookie2",
+      "value": "181fe5595b0640c8909f89e368c3e8a4",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "mtop_partitioned_detect",
+      "value": "1",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1772726093.970008,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_m_h5_tk",
+      "value": "e5a1f2659344397fde199945e66d46eb_1772729334224",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1772726093.970053,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_m_h5_tk_enc",
+      "value": "5ee2751825eac61dd645ad583b48035e",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1772726093.970073,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "XSRF-TOKEN",
+      "value": "238b14c0-8580-43ef-8b63-8a280ae0f8cf",
+      "domain": "passport.goofish.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_samesite_flag_",
+      "value": "true",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "t",
+      "value": "7a9c05ef8426728bd7a35329c551c8c6",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1780525494.226255,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_tb_token_",
+      "value": "30b54565e0a66",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "arms_uid",
+      "value": "1dbe72cd-3064-482b-80c3-139f110bd7ca",
+      "domain": "passport.goofish.com",
+      "path": "/",
+      "expires": 1788272694.640067,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_uab_collina",
+      "value": "177272069488125096537438",
+      "domain": "passport.goofish.com",
+      "path": "/",
+      "expires": 1807280694.881643,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "xlly_s",
+      "value": "1",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1772979895,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "tfstk",
+      "value": "grJqfnmA4xH45x3HYHXZLX0x0DWAOOuCnd_1jhxGcZbcCjQGShLRfRtMhF8w8EyX5h0v7d7kzn16Gxnw7eYV11v15drvUey_hqhvjRW1I2gIdvtYcOBiRXXSK57AX3biVsX2Emk5I2gIdCMTSIXMc3fEI3xlyGSGjRYgr3bRYPXGo14uZMblSOYGo84lcM2gi-fMq0SOrNXGIFXo4G_lSOXMS3Ddy1fUUGCmmJ978Krkxs7HmaywDLScgSKczR2MUI1V-R_zIRvPDhDzlseE1wAdl61yrYwVQ3jwlaTnK8WlTBK1bEk4ntOkwKBXF2rdgF7PtLCrEzSyUHOh23lE43JNu6vcalwX2tSMS1R-8JsVhQ5e3InTrnYCuBXvfkuX46RP9gfubSXXOH9OtKD4Ja1dbE_W-v2PE1jy5PIlaPv9gPVGigIPR0oP855MDKhhZyPT6saR4wimm5FOiMIPR0oU65CATg7Imq1..",
+      "domain": ".goofish.com",
+      "path": "/",
+      "expires": 1788272694,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "user_agent": "130.0.6723.31",
+  "extracted_at": null
+}
