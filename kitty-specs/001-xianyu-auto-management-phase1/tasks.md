@@ -191,11 +191,11 @@
 **Estimated Size**: ~450 lines
 
 **Included Subtasks**:
-- [ ] T028: 创建消息 API 路由
-- [ ] T029: 实现消息检测服务
-- [ ] T030: 集成 MiniMax AI
-- [ ] T031: 实现自动回复逻辑
-- [ ] T032: 实现回复记录保存
+- [x] T028: 创建消息 API 路由
+- [x] T029: 实现消息检测服务
+- [x] T030: 集成 MiniMax AI
+- [x] T031: 实现自动回复逻辑
+- [x] T032: 实现回复记录保存
 
 **Implementation**:
 1. 创建消息路由
