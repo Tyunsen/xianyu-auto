@@ -1,13 +1,13 @@
 ---
 work_package_id: WP14
 title: 集成测试和优化
-lane: "for_review"
+lane: "doing"
 dependencies: [WP01, WP02, WP03, WP04, WP05, WP06, WP07, WP08, WP09, WP10, WP11, WP12, WP13]
 base_branch: 001-xianyu-auto-management-phase1-WP13
 base_commit: c28373c154310ce3abd70730fdd7ede5adfdd1ef
 created_at: '2026-03-05T07:50:53.238820+00:00'
 subtasks: [T055, T056, T057, T058]
-shell_pid: "38012"
+shell_pid: "49676"
 agent: "claude-code"
 history:
 - date: '2026-03-05'
@@ -90,3 +90,4 @@ spec-kitty implement WP14 --base WP13
 
 - 2026-03-05T07:50:55Z – claude-code – shell_pid=38012 – lane=doing – Assigned agent via workflow command
 - 2026-03-05T07:53:25Z – claude-code – shell_pid=38012 – lane=for_review – Ready for review: 集成测试和优化已完成
+- 2026-03-05T08:05:58Z – claude-code – shell_pid=49676 – lane=doing – Started review via workflow command
