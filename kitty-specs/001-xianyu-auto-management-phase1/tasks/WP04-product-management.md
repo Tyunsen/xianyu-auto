@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP04"
-title: "商品管理模块（后端）"
-lane: "planned"
-dependencies: ["WP02"]
-subtasks: ["T015", "T016", "T017", "T018"]
+work_package_id: WP04
+title: 商品管理模块（后端）
+lane: "doing"
+dependencies: [WP02]
+base_branch: 001-xianyu-auto-management-phase1-WP02
+base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
+created_at: '2026-03-05T07:03:26.966982+00:00'
+subtasks: [T015, T016, T017, T018]
+shell_pid: "41040"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP04: 商品管理模块（后端）
