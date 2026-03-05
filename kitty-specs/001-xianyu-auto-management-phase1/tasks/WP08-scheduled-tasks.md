@@ -8,6 +8,7 @@ base_commit: 01bc0f5b2ed20b0f7b4d8898c1999619dabb0ae3
 created_at: '2026-03-05T07:17:39.389230+00:00'
 subtasks: [T033, T034, T035, T036]
 shell_pid: "41372"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -83,3 +84,7 @@ async def auto_sign_in():
 ```bash
 spec-kitty implement WP08 --base WP03
 ```
+
+## Activity Log
+
+- 2026-03-05T07:17:41Z – claude-code – shell_pid=41372 – lane=doing – Assigned agent via workflow command
