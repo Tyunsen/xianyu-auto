@@ -8,6 +8,7 @@ base_commit: c28373c154310ce3abd70730fdd7ede5adfdd1ef
 created_at: '2026-03-05T07:50:53.238820+00:00'
 subtasks: [T055, T056, T057, T058]
 shell_pid: "38012"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -84,3 +85,7 @@ spec-kitty implement WP14 --base WP13
 ## Note
 
 **核心功能必须有单元测试** - 根据 Constitution 要求
+
+## Activity Log
+
+- 2026-03-05T07:50:55Z – claude-code – shell_pid=38012 – lane=doing – Assigned agent via workflow command
