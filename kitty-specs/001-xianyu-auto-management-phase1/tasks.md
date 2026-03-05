@@ -63,11 +63,11 @@
 **Estimated Size**: ~400 lines
 
 **Included Subtasks**:
-- [ ] T006: 配置 SQLAlchemy 和 Alembic
-- [ ] T007: 创建账号、商品、卡密模型
-- [ ] T008: 创建订单、消息、告警模型
-- [ ] T009: 创建配置、日志、黑名单模型
-- [ ] T010: 执行首次数据库迁移
+- [x] T006: 配置 SQLAlchemy 和 Alembic
+- [x] T007: 创建账号、商品、卡密模型
+- [x] T008: 创建订单、消息、告警模型
+- [x] T009: 创建配置、日志、黑名单模型
+- [x] T010: 执行首次数据库迁移
 
 **Implementation**:
 1. 配置 database connection
