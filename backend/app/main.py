@@ -1,6 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
+from app.api.accounts_router import router as accounts_router
+from app.api.products_router import router as products_router
+from app.api.cards_router import router as cards_router
+from app.api.orders_router import router as orders_router
+from app.api.messages_router import router as messages_router
+from app.api.logs_router import router as logs_router
+from app.api.alerts_router import router as alerts_router
 
 settings = get_settings()
 
@@ -32,11 +39,11 @@ async def health_check():
     return {"status": "healthy"}
 
 
-# 导入并注册路由（待实现）
-# from app.api import accounts, products, cards, orders, messages, tasks
-# app.include_router(accounts.router, prefix="/api/accounts", tags=["账号管理"])
-# app.include_router(products.router, prefix="/api/products", tags=["商品管理"])
-# app.include_router(cards.router, prefix="/api/cards", tags=["卡密管理"])
-# app.include_router(orders.router, prefix="/api/orders", tags=["订单管理"])
-# app.include_router(messages.router, prefix="/api/messages", tags=["消息管理"])
-# app.include_router(tasks.router, prefix="/api/tasks", tags=["任务管理"])
+# 注册路由
+app.include_router(accounts_router, prefix="/api/accounts", tags=["账号管理"])
+app.include_router(products_router, prefix="/api/products", tags=["商品管理"])
+app.include_router(cards_router, prefix="/api/cards", tags=["卡密管理"])
+app.include_router(orders_router, prefix="/api/orders", tags=["订单管理"])
+app.include_router(messages_router, prefix="/api/messages", tags=["消息管理"])
+app.include_router(logs_router, prefix="/api/logs", tags=["日志管理"])
+app.include_router(alerts_router, prefix="/api/alerts", tags=["告警管理"])
