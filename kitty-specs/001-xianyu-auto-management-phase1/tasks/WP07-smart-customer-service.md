@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP07"
-title: "智能客服（CC）模块"
-lane: "planned"
-dependencies: ["WP02", "WP03"]
-subtasks: ["T028", "T029", "T030", "T031", "T032"]
+work_package_id: WP07
+title: 智能客服（CC）模块
+lane: "doing"
+dependencies: [WP02, WP03]
+base_branch: 001-xianyu-auto-management-phase1-WP06
+base_commit: 31f8fa3aa53dc4f6f21cb114412c4dfae9eb6f6d
+created_at: '2026-03-05T07:12:31.927386+00:00'
+subtasks: [T028, T029, T030, T031, T032]
+shell_pid: "10960"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP07: 智能客服（CC）模块
