@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP09"
-title: "前端基础和账号管理"
-lane: "planned"
-dependencies: ["WP01", "WP03"]
-subtasks: ["T037", "T038", "T039", "T040"]
+work_package_id: WP09
+title: 前端基础和账号管理
+lane: "doing"
+dependencies: [WP01, WP03]
+base_branch: 001-xianyu-auto-management-phase1-WP08
+base_commit: 049efa98c6f7cfe53e5b96c86f280c9ca8da511c
+created_at: '2026-03-05T07:21:29.198468+00:00'
+subtasks: [T037, T038, T039, T040]
+shell_pid: "37636"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP09: 前端基础和账号管理
