@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP08"
-title: "定时任务模块"
-lane: "planned"
-dependencies: ["WP02", "WP03"]
-subtasks: ["T033", "T034", "T035", "T036"]
+work_package_id: WP08
+title: 定时任务模块
+lane: "doing"
+dependencies: [WP02, WP03]
+base_branch: 001-xianyu-auto-management-phase1-WP07
+base_commit: 01bc0f5b2ed20b0f7b4d8898c1999619dabb0ae3
+created_at: '2026-03-05T07:17:39.389230+00:00'
+subtasks: [T033, T034, T035, T036]
+shell_pid: "41372"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP08: 定时任务模块
