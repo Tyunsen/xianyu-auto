@@ -1,7 +1,7 @@
 ---
 work_package_id: WP06
 title: 订单和自动发货模块
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02, WP05, WP03]
 base_branch: 001-xianyu-auto-management-phase1-WP05
 base_commit: 98e8445ecc0e33cea444a688b598378c1bded668
@@ -89,3 +89,4 @@ spec-kitty implement WP06 --base WP05
 ## Activity Log
 
 - 2026-03-05T07:08:13Z – claude-code – shell_pid=40524 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:12:09Z – claude-code – shell_pid=40524 – lane=for_review – Ready for review: 订单和自动发货模块已完成
