@@ -1,0 +1,11 @@
+{
+  "feature_number": "001",
+  "slug": "001-xianyu-auto-management-phase1",
+  "feature_slug": "001-xianyu-auto-management-phase1",
+  "friendly_name": "闲鱼自动管理系统（第一期）",
+  "mission": "software-dev",
+  "source_description": "基于需求规格说明书，创建闲鱼自动管理系统第一期，包括商品管理、卡密管理、账号管理、自动发货、智能客服等功能。系统持续监控任务，CC按需启动处理客服消息。",
+  "target_branch": "master",
+  "vcs": "git",
+  "created_at": "2026-03-05T05:17:49.099037+00:00"
+}

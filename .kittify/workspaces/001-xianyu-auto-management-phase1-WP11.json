@@ -1,0 +1,16 @@
+{
+  "wp_id": "WP11",
+  "feature_slug": "001-xianyu-auto-management-phase1",
+  "worktree_path": ".worktrees\\001-xianyu-auto-management-phase1-WP11",
+  "branch_name": "001-xianyu-auto-management-phase1-WP11",
+  "base_branch": "001-xianyu-auto-management-phase1-WP10",
+  "base_commit": "edab058e41c92d911a332a9bead8e1877a5939b1",
+  "dependencies": [
+    "WP06",
+    "WP07",
+    "WP09"
+  ],
+  "created_at": "2026-03-05T07:38:21.622181+00:00",
+  "created_by": "implement-command",
+  "vcs_backend": "git"
+}

@@ -1,68 +1,46 @@
 version: '3.8'
 
 services:
-  # MySQL数据库
-  mysql:
-    image: mysql:8.0
-    container_name: xianyu-mysql
-    restart: always
+  postgres:
+    image: postgres:14
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-xianyu123}
-      MYSQL_DATABASE: ${MYSQL_DATABASE:-xianyu}
-      MYSQL_USER: ${MYSQL_USER:-xianyu}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-xianyu123}
+      POSTGRES_DB: xianyu_auto
+      POSTGRES_USER: xianyu
+      POSTGRES_PASSWORD: xianyu123
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
     ports:
-      - "3306:3306"
-    networks:
-      - xianyu-network
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U xianyu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  # 后端服务
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: xianyu-backend
-    restart: always
-    depends_on:
-      - mysql
-    environment:
-      - DATABASE_URL=mysql+pymysql://${MYSQL_USER:-xianyu}:${MYSQL_PASSWORD:-xianyu123}@mysql:3306/${MYSQL_DATABASE:-xianyu}
-      - REDIS_URL=redis://redis:6379/0
-    volumes:
-      - ./data:/app/data
-      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8000:8000"
-    networks:
-      - xianyu-network
+    environment:
+      - DATABASE_URL=postgresql://xianyu:xianyu123@postgres:5432/xianyu_auto
+      - DEBUG=true
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+    command: uvicorn src.main:app --host 0.0.0.0 --reload
 
-  # Redis缓存
-  redis:
-    image: redis:7-alpine
-    container_name: xianyu-redis
-    restart: always
-    networks:
-      - xianyu-network
-
-  # 前端服务
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: xianyu-frontend
-    restart: always
-    depends_on:
-      - backend
     ports:
       - "80:80"
-    networks:
-      - xianyu-network
-
-networks:
-  xianyu-network:
-    driver: bridge
+    depends_on:
+      - backend
 
 volumes:
-  mysql_data:
+  postgres_data:

@@ -1,30 +1,26 @@
-# Web框架
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
-python-multipart==0.0.6
-
-# 数据库
 sqlalchemy==2.0.25
-pymysql==1.1.0
+psycopg2-binary==2.9.9
 alembic==1.13.1
-
-# Redis
-redis==5.0.1
-
-# Playwright
-playwright==1.41.0
-
-# 异步
-asyncpg==0.29.0
-aiosqlite==0.19.0
-
-# 工具
 pydantic==2.5.3
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
-httpx==0.26.0
-python-dateutil==2.8.2
-
-# 其他
+python-multipart==0.0.6
 cryptography==41.0.7
+apscheduler==3.10.4
+playwright==1.41.0
+httpx==0.26.0
+aiohttp==3.9.1
+aiosmtplib==3.0.1
 email-validator==2.1.0.post1
+
+# Testing
+pytest==7.4.4
+pytest-cov==4.1.0
+pytest-asyncio==0.23.3
+
+# Development
+black==24.1.1
+flake8==7.0.0
+isort==5.13.2

@@ -1,0 +1,90 @@
+"""
+闲鱼自动管理系统 - 后端入口
+"""
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+import logging
+
+from src.config import settings
+from src.database import engine, Base
+
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """应用生命周期管理"""
+    logger.info("应用启动中...")
+
+    # 启动定时任务调度器
+    scheduler = None
+    try:
+        from src.tasks.scheduler import get_scheduler
+        scheduler = get_scheduler()
+        scheduler.start()
+        logger.info("定时任务调度器已启动")
+    except Exception as e:
+        logger.warning(f"定时任务调度器启动失败: {e}")
+
+    logger.info("应用启动完成")
+
+    yield
+
+    # 关闭调度器
+    if scheduler:
+        scheduler.shutdown()
+
+    logger.info("应用关闭中...")
+
+
+# 创建 FastAPI 应用
+app = FastAPI(
+    title="闲鱼自动管理系统 API",
+    description="提供账号、商品、卡密、订单、消息等管理功能",
+    version="0.1.0",
+    lifespan=lifespan,
+)
+
+# 配置 CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/")
+async def root():
+    """根路径"""
+    return {"message": "闲鱼自动管理系统 API", "version": "0.1.0"}
+
+
+@app.get("/health")
+async def health_check():
+    """健康检查"""
+    return {"status": "healthy"}
+
+
+# API 路由
+from src.api import accounts, products, card_keys, orders, messages, backup, settings as settings_api
+
+app.include_router(accounts.router)
+app.include_router(products.router)
+app.include_router(card_keys.router)
+app.include_router(orders.router)
+app.include_router(messages.router)
+app.include_router(backup.router)
+app.include_router(settings_api.router)
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True)
