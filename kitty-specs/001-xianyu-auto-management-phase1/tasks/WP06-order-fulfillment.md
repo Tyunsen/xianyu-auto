@@ -8,6 +8,7 @@ base_commit: 98e8445ecc0e33cea444a688b598378c1bded668
 created_at: '2026-03-05T07:08:10.804529+00:00'
 subtasks: [T023, T024, T025, T026, T027]
 shell_pid: "40524"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -84,3 +85,7 @@ async def direct_ship(order_id: int):
 ```bash
 spec-kitty implement WP06 --base WP05
 ```
+
+## Activity Log
+
+- 2026-03-05T07:08:13Z – claude-code – shell_pid=40524 – lane=doing – Assigned agent via workflow command
