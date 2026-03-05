@@ -217,10 +217,10 @@
 **Estimated Size**: ~350 lines
 
 **Included Subtasks**:
-- [ ] T033: 配置 APScheduler
-- [ ] T034: 实现自动擦亮任务
-- [ ] T035: 实现自动签到任务
-- [ ] T036: 实现任务日志记录
+- [x] T033: 配置 APScheduler
+- [x] T034: 实现自动擦亮任务
+- [x] T035: 实现自动签到任务
+- [x] T036: 实现任务日志记录
 
 **Implementation**:
 1. 配置调度器
