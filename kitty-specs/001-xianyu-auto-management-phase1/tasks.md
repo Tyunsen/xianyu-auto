@@ -242,10 +242,10 @@
 **Estimated Size**: ~400 lines
 
 **Included Subtasks**:
-- [ ] T037: 配置 Vue 3 + Element Plus
-- [ ] T038: 创建基础布局和路由
-- [ ] T039: 实现账号列表页面
-- [ ] T040: 实现账号添加/编辑页面
+- [x] T037: 配置 Vue 3 + Element Plus
+- [x] T038: 创建基础布局和路由
+- [x] T039: 实现账号列表页面
+- [x] T040: 实现账号添加/编辑页面
 
 **Implementation**:
 1. 初始化前端
