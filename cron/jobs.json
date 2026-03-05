@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "6e3796c9-b3f2-4fda-9978-fa56ce6ff18a",
+      "name": "daily-news",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "【每日金融简报】\n\n## 你是谁\n面向投资新手的金融分析师，用最简洁的语言解读最重要的财经新闻。\n\n## 多来源强制要求\n必须从至少 4 个不同来源获取新闻！\n\n来源类型要求（至少各含1条）：\n1. 中文媒体（如：财新、财联社、华尔街见闻、新华社等）\n2. Reuters\n3. 非美国媒体（如：BBC、Al Jazeera、Financial Times等）\n4. 其他来源（如：Bloomberg、WSJ、CNBC等）\n\n## 任务\n1. 用 mcporter 搜索今天全球重要金融新闻，关键词灵活选择\n2. 只筛选 3-5 条最重要的\n3. 每条新闻：发生了什么 + 导致了什么影响 + 媒体来源 + 链接\n4. 根据今日新闻动态，灵活给出投资建议\n\n## 搜索工具（用 mcporter）\n# Exa 搜索\nmcporter call 'exa.web_search_exa(query: \"关键词\", numResults: 5)'\n# Tavily 搜索\nmcporter call 'tavily.tavily_search(query: \"关键词\", max_results: 5)'\n# Serper Google 搜索\nmcporter call 'serper.google_search(q: \"关键词\", gl: \"us\", hl: \"zh\", num: 5)'\n# MiniMax 搜索（中文）\nmcporter call 'mcp__MiniMax__web_search(query: \"关键词\")'\n\n## 新闻写作风格\n- 具体：写具体事件，不要写抽象概念\n- 小白友好：解释这个新闻对市场意味着什么\n- 板块影响融入新闻：每条新闻本身就包含对哪些板块有影响\n\n## 投资建议原则\n- 不要固定推荐某些资产，根据今日新闻动态灵活判断\n- 可以建议：增仓什么、减仓什么、回避什么、关注什么\n- 给出理由，让小白能理解为什么\n\n## 输出格式\n📰 每日金融简报 - {日期}\n\n【今日要闻】3-5条\n1. {发生了什么}，{导致了什么影响} — {媒体}\n   🔗 {链接}\n2. ...\n【投资建议】\n- 📈 可关注：{资产/板块} — {理由}\n- 📉 谨慎/回避：{资产/板块} — {理由}\n- 💡 机会点：{根据新闻发现的潜在机会}\n【今日观点】\n{结合之前趋势和今日新闻，预测未来走向}\n\n✅ 来源统计：{媒体}(数量)... — 共X个来源\n\n⚠️ 仅供参考\n\n通过飞书发送。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_1a47942577ce41f40747f2bf42c6ede5",
+        "bestEffort": true
+      }
+    },
+    {
+      "id": "daily-rec-learning-001",
+      "name": "每日推荐系统学习",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "【每日推荐系统学习任务】\n\n项目路径：E:\\\\codes\\\\recommend_sys\n\n## 步骤1：读取学习进度\n读取 cron/rec-sys-learning.json 获取当前知识点索引、本月已学习天数、已学论文数。根据索引读取对应的 Python 学习文件，提取【学习目标】和【核心概念】。\n\n## 步骤2：搜索今日新论文/技术\n\n搜索工具（用 mcporter）：\n# Exa 搜索\nmcporter call 'exa.web_search_exa(query: \"关键词\", numResults: 5)'\n# Tavily 搜索\nmcporter call 'tavily.tavily_search(query: \"关键词\", max_results: 5)'\n# Serper Google 搜索\nmcporter call 'serper.google_search(q: \"关键词\", gl: \"us\", hl: \"en\", num: 5)'\n# MiniMax 搜索\nmcporter call 'mcp__MiniMax__web_search(query: \"关键词\")'\n# GitHub 搜索\nmcporter call 'github.search_repositories(query: \"关键词\", num: 5)'\n\n优先级排序：\n1. 业界经典（最高）：国内外大厂技术博客/论文（如阿里、字节、美团、Meta、Google、Netflix、Amazon等）\n2. 经典权威论文：如 DeepFM、DIN、DIEN、YouTube DNN 等有影响力的老论文\n3. 最新论文：最近 1-2 个月的高质量论文\n\n搜索关键词灵活选择，如：\n- 推荐系统 技术实践\n- recommendation system industry\n- CTR prediction model\n- Two-tower retrieval model\n\n筛选标准：\n- 业界优先（大厂技术博客/论文，有实际落地应用）\n- 经典权威，有影响力的论文\n- 纯高校实验室论文需谨慎（缺乏实践验证）\n\n## 步骤3：创建学习文件\n如果找到值得学习的论文/技术，创建学习文件到 08_advanced/ 目录，并更新 notes.md\n\n## 步骤4：发送飞书\n格式：\n📚 每日推荐系统学习 - Day {序号}\n\n【今日主题】{知识点标题}\n【学习目标】{目标简述}\n\n---今日新知---\n【论文/技术】{标题}\n【来源】{公司/会议} | {年份}\n【核心贡献】{2-3句话概括}\n【论文链接】{arXiv/GitHub/官网链接}\n【学习文件】python 08_advanced/05_xxx.py\n\n📊 本月统计：已学习 {N} 天，{M} 篇论文/技术 | 进度: Day {序号}/37 ✅\n\n完成后通过飞书发送。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_1a47942577ce41f40747f2bf42c6ede5",
+        "bestEffort": true
+      }
+    }
+  ]
+}

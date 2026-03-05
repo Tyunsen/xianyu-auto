@@ -1,7 +1,8 @@
 /**
  * API 客户端
+ * 生产环境使用相对路径，开发环境使用环境变量或 localhost:8000
  */
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:8000')
 
 interface ApiResponse<T> {
   items: T[]
@@ -109,16 +110,16 @@ class ApiClient {
     const query = new URLSearchParams()
     if (params?.skip) query.set('skip', String(params.skip))
     if (params?.limit) query.set('limit', String(params.limit))
-    return this.request(`/api/accounts?${query}`)
+    return this.request(`/accounts?${query}`)
   }
   async createAccount(data: AccountCreate): Promise<Account> {
-    return this.request('/api/accounts', { method: 'POST', body: JSON.stringify(data) })
+    return this.request('/accounts', { method: 'POST', body: JSON.stringify(data) })
   }
   async updateAccount(id: number, data: AccountUpdate): Promise<Account> {
-    return this.request(`/api/accounts/${id}`, { method: 'PUT', body: JSON.stringify(data) })
+    return this.request(`/accounts/${id}`, { method: 'PUT', body: JSON.stringify(data) })
   }
   async deleteAccount(id: number): Promise<void> {
-    await this.request(`/api/accounts/${id}`, { method: 'DELETE' })
+    await this.request(`/accounts/${id}`, { method: 'DELETE' })
   }
 
   // 商品 API
@@ -128,22 +129,22 @@ class ApiClient {
     if (params?.limit) query.set('limit', String(params.limit))
     if (params?.status) query.set('status', params.status)
     if (params?.search) query.set('search', params.search)
-    return this.request(`/api/products?${query}`)
+    return this.request(`/products?${query}`)
   }
   async createProduct(data: ProductCreate): Promise<Product> {
-    return this.request('/api/products', { method: 'POST', body: JSON.stringify(data) })
+    return this.request('/products', { method: 'POST', body: JSON.stringify(data) })
   }
   async updateProduct(id: number, data: ProductUpdate): Promise<Product> {
-    return this.request(`/api/products/${id}`, { method: 'PUT', body: JSON.stringify(data) })
+    return this.request(`/products/${id}`, { method: 'PUT', body: JSON.stringify(data) })
   }
   async deleteProduct(id: number): Promise<void> {
-    await this.request(`/api/products/${id}`, { method: 'DELETE' })
+    await this.request(`/products/${id}`, { method: 'DELETE' })
   }
   async publishProduct(id: number): Promise<void> {
-    await this.request(`/api/products/${id}/publish`, { method: 'POST' })
+    await this.request(`/products/${id}/publish`, { method: 'POST' })
   }
   async unpublishProduct(id: number): Promise<void> {
-    await this.request(`/api/products/${id}/unpublish`, { method: 'POST' })
+    await this.request(`/products/${id}/unpublish`, { method: 'POST' })
   }
 
   // 卡密 API
@@ -153,14 +154,14 @@ class ApiClient {
     if (params?.limit) query.set('limit', String(params.limit))
     if (params?.product_id) query.set('product_id', String(params.product_id))
     if (params?.status) query.set('status', params.status)
-    return this.request(`/api/card-keys?${query}`)
+    return this.request(`/card-keys?${query}`)
   }
   async getCardKeyStats(productId?: number): Promise<CardKeyStats> {
     const query = productId ? `?product_id=${productId}` : ''
-    return this.request(`/api/card-keys/stats${query}`)
+    return this.request(`/card-keys/stats${query}`)
   }
   async importCardKeys(file: File, productId: number): Promise<{ imported: number; failed: number }> {
-    const response = await fetch(`${this.baseUrl}/api/card-keys/import?product_id=${productId}`, { method: 'POST', body: file })
+    const response = await fetch(`${this.baseUrl}/card-keys/import?product_id=${productId}`, { method: 'POST', body: file })
     if (!response.ok) throw new Error('导入失败')
     return response.json()
   }
@@ -172,13 +173,13 @@ class ApiClient {
     if (params?.limit) query.set('limit', String(params.limit))
     if (params?.status) query.set('status', params.status)
     if (params?.account_id) query.set('account_id', String(params.account_id))
-    return this.request(`/api/orders?${query}`)
+    return this.request(`/orders?${query}`)
   }
   async shipOrder(id: number): Promise<void> {
-    await this.request(`/api/orders/${id}/ship`, { method: 'POST' })
+    await this.request(`/orders/${id}/ship`, { method: 'POST' })
   }
   async completeOrder(id: number): Promise<void> {
-    await this.request(`/api/orders/${id}/complete`, { method: 'POST' })
+    await this.request(`/orders/${id}/complete`, { method: 'POST' })
   }
 
   // 消息 API
@@ -188,13 +189,13 @@ class ApiClient {
     if (params?.limit) query.set('limit', String(params.limit))
     if (params?.account_id) query.set('account_id', String(params.account_id))
     if (params?.is_read !== undefined) query.set('is_read', String(params.is_read))
-    return this.request(`/api/messages?${query}`)
+    return this.request(`/messages?${query}`)
   }
   async getConversation(accountId: number, fromUser: string): Promise<ApiResponse<Message>> {
-    return this.request(`/api/messages/conversation?account_id=${accountId}&from_user=${encodeURIComponent(fromUser)}`)
+    return this.request(`/messages/conversation?account_id=${accountId}&from_user=${encodeURIComponent(fromUser)}`)
   }
   async replyMessage(id: number, content: string): Promise<void> {
-    await this.request(`/api/messages/${id}/reply`, { method: 'POST', body: JSON.stringify(content) })
+    await this.request(`/messages/${id}/reply`, { method: 'POST', body: JSON.stringify(content) })
   }
 }
 

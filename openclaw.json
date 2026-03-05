@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.2",
+    "lastTouchedAt": "2026-03-04T15:40:00.000Z"
+  },
+  "env": {
+    "MINIMAX_API_KEY": "sk-cp-S8QjBwgkiMlTjtlm2n08hYjX39Vp3E1DnSbvesOYJM4m91KdytHxmactHvDNeKOPO_8cSdHNb0yDD6sxChMUPafS5vmBDqdU4gQSFNOqb5NkvqJPFeUSysg",
+    "KIMI_API_KEY": "sk-kimi-5vNhW3X0C1EFlnF6GSG7YyCfVL2h4CVDO1Z4xYQB1SrrgkoLpD8ENF04ugH4lIzD"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "sk-cp-S8QjBwgkiMlTjtlm2n08hYjX39Vp3E1DnSbvesOYJM4m91KdytHxmactHvDNeKOPO_8cSdHNb0yDD6sxChMUPafS5vmBDqdU4gQSFNOqb5NkvqJPFeUSysg",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "input": ["text"],
+            "contextWindow": 200000
+          }
+        ]
+      },
+      "kimi": {
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "apiKey": "sk-kimi-5vNhW3X0C1EFlnF6GSG7YyCfVL2h4CVDO1Z4xYQB1SrrgkoLpD8ENF04ugH4lIzD",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2-turbo-preview",
+            "name": "Kimi K2 Turbo",
+            "input": ["text", "image"],
+            "contextWindow": 128000
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax/MiniMax-M2.5"
+      },
+      "models": {
+        "minimax/MiniMax-M2.5": {
+          "alias": "MiniMax M2.5"
+        },
+        "kimi/kimi-k2-turbo-preview": {
+          "alias": "Kimi K2"
+        }
+      },
+      "memorySearch": {
+        "enabled": true
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "30m"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "name": "main",
+        "model": "minimax/MiniMax-M2.5",
+        "tools": {
+          "profile": "full"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": false
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "elevated": {
+      "enabled": true
+    },
+    "exec": {
+      "host": "gateway",
+      "security": "full",
+      "ask": "off"
+    }
+  },
+  "channels": {
+    "feishu": {
+      "appId": "cli_a919947606b8dbcc",
+      "appSecret": "ThCDip79v8FBuGM6B0iLudtUXD2pH0bO",
+      "enabled": true,
+      "connectionMode": "websocket",
+      "dmPolicy": "open",
+      "groupPolicy": "open",
+      "requireMention": true,
+      "allowFrom": ["*"]
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "915592a06e5a1fe1fbcadcb5b3d094b297c1d7d4b1145a92"
+    }
+  }
+}
