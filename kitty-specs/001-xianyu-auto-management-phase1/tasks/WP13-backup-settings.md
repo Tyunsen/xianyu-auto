@@ -1,7 +1,7 @@
 ---
 work_package_id: WP13
 title: 备份导出和系统设置
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02]
 base_branch: 001-xianyu-auto-management-phase1-WP12
 base_commit: e60dd35cda403aa362767b95ac179c4c152f26fd
@@ -64,3 +64,4 @@ spec-kitty implement WP13 --base WP02
 ## Activity Log
 
 - 2026-03-05T07:46:46Z – claude-code – shell_pid=45188 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:50:25Z – claude-code – shell_pid=45188 – lane=for_review – Ready for review: 备份导出和系统设置已完成
