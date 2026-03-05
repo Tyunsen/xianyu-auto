@@ -60,11 +60,10 @@ async def health_check():
     return {"status": "healthy"}
 
 
-# TODO: 添加 API 路由
-# from src.api import accounts, products, card_keys, orders, messages
-# app.include_router(accounts.router, prefix="/api")
-# app.include_router(products.router, prefix="/api")
-# ...
+# API 路由
+from src.api import accounts
+
+app.include_router(accounts.router)
 
 
 if __name__ == "__main__":
