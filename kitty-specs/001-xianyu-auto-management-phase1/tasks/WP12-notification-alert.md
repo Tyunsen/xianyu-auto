@@ -8,6 +8,7 @@ base_commit: 50d3581a8b597a5bdd223d2e33fe12ffb9e19a7a
 created_at: '2026-03-05T07:44:06.902890+00:00'
 subtasks: [T049, T050, T051]
 shell_pid: "43444"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -68,3 +69,7 @@ class AlertService:
 ```bash
 spec-kitty implement WP12 --base WP02
 ```
+
+## Activity Log
+
+- 2026-03-05T07:44:09Z – claude-code – shell_pid=43444 – lane=doing – Assigned agent via workflow command
