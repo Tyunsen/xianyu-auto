@@ -1,13 +1,13 @@
 ---
 work_package_id: WP09
 title: 前端基础和账号管理
-lane: "for_review"
+lane: "doing"
 dependencies: [WP01, WP03]
 base_branch: 001-xianyu-auto-management-phase1-WP08
 base_commit: 049efa98c6f7cfe53e5b96c86f280c9ca8da511c
 created_at: '2026-03-05T07:21:29.198468+00:00'
 subtasks: [T037, T038, T039, T040]
-shell_pid: "37636"
+shell_pid: "49576"
 agent: "claude-code"
 history:
 - date: '2026-03-05'
@@ -84,3 +84,4 @@ spec-kitty implement WP09 --base WP01
 
 - 2026-03-05T07:21:31Z – claude-code – shell_pid=37636 – lane=doing – Assigned agent via workflow command
 - 2026-03-05T07:27:35Z – claude-code – shell_pid=37636 – lane=for_review – Ready for review: 前端账号管理页面已完成
+- 2026-03-05T08:03:50Z – claude-code – shell_pid=49576 – lane=doing – Started review via workflow command
