@@ -1,7 +1,7 @@
 ---
 work_package_id: WP04
 title: 商品管理模块（后端）
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02]
 base_branch: 001-xianyu-auto-management-phase1-WP02
 base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
@@ -82,3 +82,4 @@ spec-kitty implement WP04 --base WP02
 ## Activity Log
 
 - 2026-03-05T07:03:29Z – claude-code – shell_pid=41040 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:05:57Z – claude-code – shell_pid=41040 – lane=for_review – Ready for review: 商品管理后端模块已完成
