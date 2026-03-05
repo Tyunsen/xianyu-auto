@@ -10,6 +10,8 @@ sys.path.insert(0, ".")
 
 from src.database import Base
 from src.config import settings
+# 导入所有模型，确保它们被注册到 Base.metadata
+from src.models import *
 
 # this is the Alembic Config object
 config = context.config
