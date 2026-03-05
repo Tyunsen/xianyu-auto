@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP12"
-title: "通知和告警模块"
-lane: "planned"
-dependencies: ["WP02", "WP03"]
-subtasks: ["T049", "T050", "T051"]
+work_package_id: WP12
+title: 通知和告警模块
+lane: "doing"
+dependencies: [WP02, WP03]
+base_branch: 001-xianyu-auto-management-phase1-WP11
+base_commit: 50d3581a8b597a5bdd223d2e33fe12ffb9e19a7a
+created_at: '2026-03-05T07:44:06.902890+00:00'
+subtasks: [T049, T050, T051]
+shell_pid: "43444"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP12: 通知和告警模块
