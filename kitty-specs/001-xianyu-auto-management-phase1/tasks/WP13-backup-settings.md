@@ -1,0 +1,57 @@
+---
+work_package_id: "WP13"
+title: "备份导出和系统设置"
+lane: "planned"
+dependencies: ["WP02"]
+subtasks: ["T052", "T053", "T054"]
+history:
+  - date: "2026-03-05"
+    action: "created"
+---
+
+# WP13: 备份导出和系统设置
+
+## Objective
+
+实现数据备份导出和系统设置功能。
+
+## Subtasks
+
+### T052: 实现数据导出功能
+
+**Steps**:
+1. 创建导出 API:
+   ```python
+   @router.get("/export/{data_type}")
+   async def export_data(data_type: str, db: Session = Depends(get_db)):
+       # 支持: products, card_keys, orders, settings
+       # 返回 CSV/JSON
+   ```
+
+### T053: 实现数据导入功能
+
+**Steps**:
+1. 创建导入 API:
+   ```python
+   @router.post("/import/{data_type}")
+   async def import_data(data_type: str, file: UploadFile, db: Session = Depends(get_db)):
+       # 解析并导入数据
+   ```
+
+### T054: 实现系统设置页面
+
+**Steps**:
+1. 创建前端设置页面 `frontend/src/pages/Settings.vue`
+2. 功能开关: 自动发货、自动签到、AI 回复
+3. 库存预警阈值
+4. 通知邮箱配置
+
+## Dependencies
+
+- WP02: 数据库模型
+
+## Implementation Command
+
+```bash
+spec-kitty implement WP13 --base WP02
+```
