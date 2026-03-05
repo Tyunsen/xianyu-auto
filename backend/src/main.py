@@ -22,18 +22,31 @@ async def lifespan(app: FastAPI):
     """应用生命周期管理"""
     logger.info("应用启动中...")
 
-    # 创建数据库表
-    # Base.metadata.create_all(bind=engine)
+    # 启动定时任务调度器
+    scheduler = None
+    try:
+        from src.tasks.scheduler import get_scheduler
+        scheduler = get_scheduler()
+        scheduler.start()
+        logger.info("定时任务调度器已启动")
+    except Exception as e:
+        logger.warning(f"定时任务调度器启动失败: {e}")
 
     logger.info("应用启动完成")
+
     yield
+
+    # 关闭调度器
+    if scheduler:
+        scheduler.shutdown()
+
     logger.info("应用关闭中...")
 
 
 # 创建 FastAPI 应用
 app = FastAPI(
     title="闲鱼自动管理系统 API",
-    description="提供账号、商品、卡密、订单等管理功能",
+    description="提供账号、商品、卡密、订单、消息等管理功能",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -61,10 +74,15 @@ async def health_check():
 
 
 # API 路由
-from src.api import accounts, products
+from src.api import accounts, products, card_keys, orders, messages, backup, settings as settings_api
 
 app.include_router(accounts.router)
 app.include_router(products.router)
+app.include_router(card_keys.router)
+app.include_router(orders.router)
+app.include_router(messages.router)
+app.include_router(backup.router)
+app.include_router(settings_api.router)
 
 
 if __name__ == "__main__":
