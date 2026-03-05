@@ -61,11 +61,12 @@ async def health_check():
 
 
 # API 路由
-from src.api import accounts, products, card_keys
+from src.api import accounts, products, card_keys, orders
 
 app.include_router(accounts.router)
 app.include_router(products.router)
 app.include_router(card_keys.router)
+app.include_router(orders.router)
 
 
 if __name__ == "__main__":
