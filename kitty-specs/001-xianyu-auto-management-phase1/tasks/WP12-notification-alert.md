@@ -1,7 +1,7 @@
 ---
 work_package_id: WP12
 title: 通知和告警模块
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02, WP03]
 base_branch: 001-xianyu-auto-management-phase1-WP11
 base_commit: 50d3581a8b597a5bdd223d2e33fe12ffb9e19a7a
@@ -73,3 +73,4 @@ spec-kitty implement WP12 --base WP02
 ## Activity Log
 
 - 2026-03-05T07:44:09Z – claude-code – shell_pid=43444 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:46:20Z – claude-code – shell_pid=43444 – lane=for_review – Ready for review: 通知和告警模块已完成
