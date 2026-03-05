@@ -1,14 +1,14 @@
 ---
 work_package_id: WP01
 title: 项目基础设置
-lane: "for_review"
+lane: "doing"
 dependencies: []
 base_branch: master
 base_commit: 6a45668897f403c3a61fce4c2b3d5a30dc1b41ce
 created_at: '2026-03-05T05:57:07.563867+00:00'
 subtasks: [T001, T002, T003, T004, T005]
-shell_pid: "32364"
-agent: "claude"
+shell_pid: "46996"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -303,3 +303,4 @@ spec-kitty implement WP01
 
 - 2026-03-05T05:57:10Z – claude – shell_pid=32364 – lane=doing – Assigned agent via workflow command
 - 2026-03-05T06:04:03Z – claude – shell_pid=32364 – lane=for_review – Ready for review: 项目基础设置完成
+- 2026-03-05T07:58:47Z – claude-code – shell_pid=46996 – lane=doing – Started review via workflow command
