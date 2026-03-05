@@ -186,9 +186,14 @@ const handleFileChange = (file: any) => {
 
 const handleImport = async () => {
   if (!importFormRef.value) return
-  await importFormRef.value (!selectedFile.value) {
-    ElMessage.warning('请.validate()
-  if选择文件')
+  await importFormRef.value.validate((valid: boolean) => {
+    if (!valid) {
+      ElMessage.warning('请选择文件')
+      return
+    }
+  })
+  if (!selectedFile.value) {
+    ElMessage.warning('请选择文件')
     return
   }
   if (!importForm.product_id) {
