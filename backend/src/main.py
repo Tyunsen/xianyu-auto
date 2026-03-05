@@ -22,11 +22,24 @@ async def lifespan(app: FastAPI):
     """应用生命周期管理"""
     logger.info("应用启动中...")
 
-    # 创建数据库表
-    # Base.metadata.create_all(bind=engine)
+    # 启动定时任务调度器
+    scheduler = None
+    try:
+        from src.tasks.scheduler import get_scheduler
+        scheduler = get_scheduler()
+        scheduler.start()
+        logger.info("定时任务调度器已启动")
+    except Exception as e:
+        logger.warning(f"定时任务调度器启动失败: {e}")
 
     logger.info("应用启动完成")
+
     yield
+
+    # 关闭调度器
+    if scheduler:
+        scheduler.shutdown()
+
     logger.info("应用关闭中...")
 
 
