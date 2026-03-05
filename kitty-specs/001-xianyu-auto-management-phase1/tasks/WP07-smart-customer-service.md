@@ -1,13 +1,13 @@
 ---
 work_package_id: WP07
 title: 智能客服（CC）模块
-lane: "for_review"
+lane: "doing"
 dependencies: [WP02, WP03]
 base_branch: 001-xianyu-auto-management-phase1-WP06
 base_commit: 31f8fa3aa53dc4f6f21cb114412c4dfae9eb6f6d
 created_at: '2026-03-05T07:12:31.927386+00:00'
 subtasks: [T028, T029, T030, T031, T032]
-shell_pid: "10960"
+shell_pid: "49536"
 agent: "claude-code"
 history:
 - date: '2026-03-05'
@@ -100,3 +100,4 @@ spec-kitty implement WP07 --base WP03
 
 - 2026-03-05T07:12:33Z – claude-code – shell_pid=10960 – lane=doing – Assigned agent via workflow command
 - 2026-03-05T07:17:14Z – claude-code – shell_pid=10960 – lane=for_review – Ready for review: 智能客服模块已完成
+- 2026-03-05T08:02:49Z – claude-code – shell_pid=49536 – lane=doing – Started review via workflow command
