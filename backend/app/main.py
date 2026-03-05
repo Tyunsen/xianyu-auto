@@ -8,6 +8,9 @@ from app.api.orders_router import router as orders_router
 from app.api.messages_router import router as messages_router
 from app.api.logs_router import router as logs_router
 from app.api.alerts_router import router as alerts_router
+from app.api.statistics_router import router as statistics_router
+from app.api.backup_router import router as backup_router
+from app.api.blacklist_router import router as blacklist_router
 
 settings = get_settings()
 
@@ -47,3 +50,6 @@ app.include_router(orders_router, prefix="/api/orders", tags=["订单管理"])
 app.include_router(messages_router, prefix="/api/messages", tags=["消息管理"])
 app.include_router(logs_router, prefix="/api/logs", tags=["日志管理"])
 app.include_router(alerts_router, prefix="/api/alerts", tags=["告警管理"])
+app.include_router(statistics_router, prefix="/api/statistics", tags=["数据统计"])
+app.include_router(backup_router, prefix="/api/backup", tags=["备份导出"])
+app.include_router(blacklist_router, prefix="/api/blacklist", tags=["黑名单管理"])
