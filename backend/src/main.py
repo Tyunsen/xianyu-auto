@@ -33,7 +33,7 @@ async def lifespan(app: FastAPI):
 # 创建 FastAPI 应用
 app = FastAPI(
     title="闲鱼自动管理系统 API",
-    description="提供账号、商品、卡密、订单等管理功能",
+    description="提供账号、商品、卡密、订单、消息等管理功能",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -61,12 +61,13 @@ async def health_check():
 
 
 # API 路由
-from src.api import accounts, products, card_keys, orders
+from src.api import accounts, products, card_keys, orders, messages
 
 app.include_router(accounts.router)
 app.include_router(products.router)
 app.include_router(card_keys.router)
 app.include_router(orders.router)
+app.include_router(messages.router)
 
 
 if __name__ == "__main__":
