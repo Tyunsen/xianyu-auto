@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP03"
-title: "账号管理模块（后端）"
-lane: "planned"
-dependencies: ["WP02"]
-subtasks: ["T011", "T012", "T013", "T014"]
+work_package_id: WP03
+title: 账号管理模块（后端）
+lane: "doing"
+dependencies: [WP02]
+base_branch: 001-xianyu-auto-management-phase1-WP02
+base_commit: e7826b8acee95959df53463c6f1e97a3439968cb
+created_at: '2026-03-05T06:58:21.881132+00:00'
+subtasks: [T011, T012, T013, T014]
+shell_pid: "37996"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP03: 账号管理模块（后端）
