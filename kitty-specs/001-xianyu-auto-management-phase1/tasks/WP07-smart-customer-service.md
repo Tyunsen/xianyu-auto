@@ -8,6 +8,7 @@ base_commit: 31f8fa3aa53dc4f6f21cb114412c4dfae9eb6f6d
 created_at: '2026-03-05T07:12:31.927386+00:00'
 subtasks: [T028, T029, T030, T031, T032]
 shell_pid: "10960"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -94,3 +95,7 @@ async def auto_reply(message_id: int):
 ```bash
 spec-kitty implement WP07 --base WP03
 ```
+
+## Activity Log
+
+- 2026-03-05T07:12:33Z – claude-code – shell_pid=10960 – lane=doing – Assigned agent via workflow command
