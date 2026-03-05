@@ -8,6 +8,7 @@ base_commit: e60dd35cda403aa362767b95ac179c4c152f26fd
 created_at: '2026-03-05T07:46:44.472697+00:00'
 subtasks: [T052, T053, T054]
 shell_pid: "45188"
+agent: "claude-code"
 history:
 - date: '2026-03-05'
   action: created
@@ -59,3 +60,7 @@ history:
 ```bash
 spec-kitty implement WP13 --base WP02
 ```
+
+## Activity Log
+
+- 2026-03-05T07:46:46Z – claude-code – shell_pid=45188 – lane=doing – Assigned agent via workflow command
