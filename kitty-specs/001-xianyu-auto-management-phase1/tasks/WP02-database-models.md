@@ -1,7 +1,7 @@
 ---
 work_package_id: WP02
 title: 数据库模型和迁移
-lane: "doing"
+lane: "for_review"
 dependencies: [WP01]
 base_branch: 001-xianyu-auto-management-phase1-WP01
 base_commit: bb16aba76afd2b0a23c9ee06ed95f03f4b8e67a1
@@ -362,3 +362,4 @@ spec-kitty implement WP02 --base WP01
 ## Activity Log
 
 - 2026-03-05T06:50:30Z – claude-code – shell_pid=35376 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T06:55:31Z – claude-code – shell_pid=35376 – lane=for_review – Ready for review: 数据库模型和迁移已完成
