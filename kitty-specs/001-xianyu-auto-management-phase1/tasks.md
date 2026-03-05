@@ -90,10 +90,10 @@
 **Estimated Size**: ~350 lines
 
 **Included Subtasks**:
-- [ ] T011: 创建账号 API 路由 (CRUD)
-- [ ] T012: 实现登录状态检测服务
-- [ ] T013: 实现 Cookie 加密存储
-- [ ] T014: 实现登录失效告警
+- [x] T011: 创建账号 API 路由 (CRUD)
+- [x] T012: 实现登录状态检测服务
+- [x] T013: 实现 Cookie 加密存储
+- [x] T014: 实现登录失效告警
 
 **Implementation**:
 1. 创建账号路由
