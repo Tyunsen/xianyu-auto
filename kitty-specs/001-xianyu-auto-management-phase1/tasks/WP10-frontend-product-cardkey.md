@@ -1,7 +1,7 @@
 ---
 work_package_id: WP10
 title: 前端商品和卡密管理
-lane: "doing"
+lane: "for_review"
 dependencies: [WP04, WP05, WP09]
 base_branch: 001-xianyu-auto-management-phase1-WP09
 base_commit: 6ec2b85cf8d535cc0a4c54a41469cc3f5b1d674c
@@ -66,3 +66,4 @@ spec-kitty implement WP10 --base WP09
 ## Activity Log
 
 - 2026-03-05T07:28:09Z – claude-code – shell_pid=21108 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:37:59Z – claude-code – shell_pid=21108 – lane=for_review – Ready for review: 前端商品和卡密管理已完成
