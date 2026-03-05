@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP13"
-title: "备份导出和系统设置"
-lane: "planned"
-dependencies: ["WP02"]
-subtasks: ["T052", "T053", "T054"]
+work_package_id: WP13
+title: 备份导出和系统设置
+lane: "doing"
+dependencies: [WP02]
+base_branch: 001-xianyu-auto-management-phase1-WP12
+base_commit: e60dd35cda403aa362767b95ac179c4c152f26fd
+created_at: '2026-03-05T07:46:44.472697+00:00'
+subtasks: [T052, T053, T054]
+shell_pid: "45188"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP13: 备份导出和系统设置
