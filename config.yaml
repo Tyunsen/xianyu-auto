@@ -1,0 +1,205 @@
+mode: rule
+mixed-port: 7897
+allow-lan: true
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+secret: '123456'
+unified-delay: true
+bind-address: '*'
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  fallback:
+  - 1.1.1.1
+  - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+proxies:
+- name: 🇭🇰 香港01
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23327
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: edge
+  sni: moe233-riolu-61a820a2-ab45-6be7-d0d7-aeed72816683.hnair.com
+- name: 🇭🇰 香港02
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23340
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: chrome
+  sni: moe233-riolu-fd0fcfe0-b92a-f4b5-fe04-53069f5afc1b.hnair.com
+- name: 🇯🇵 日本01
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23326
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: qq
+  sni: moe233-riolu-ce068da0-f2ca-6b9b-c3cb-7dc079ae6f9e.hnair.com
+- name: 🇯🇵 日本02
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23335
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: safari
+  sni: moe233-riolu-8efefdb7-1701-a524-d925-844f02d32bf4.hnair.com
+- name: 🇸🇬 新加坡01
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23320
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: chrome
+  sni: moe233-riolu-c4c745f3-e49f-e7ac-b9d6-9a0fbe8511f0.hnair.com
+- name: 🇸🇬 新加坡02
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23325
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: qq
+  sni: moe233-riolu-0c545ee4-f931-9c24-26b7-eab6ea0370b3.hnair.com
+- name: 🇹🇼 台湾01
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23322
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: chrome
+  sni: moe233-riolu-e205aadd-7a10-0ed7-ed7e-d38ccbc15354.hnair.com
+- name: 🇺🇸 美国01
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23321
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: qq
+  sni: moe233-riolu-b94777dd-13e5-228d-ccdf-ea937be0c8ab.hnair.com
+- name: 🇺🇸 美国02
+  type: anytls
+  server: 02c9750d-c53d-bb9e-fd08-59c66f1da09a.relay.riolu01.link
+  port: 23323
+  password: abe76d35-4d1b-4e72-8933-958bb6784ffa
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+  client-fingerprint: firefox
+  sni: moe233-riolu-9ceea1e7-8f6a-c055-33ae-2da3dcc9d3b5.hnair.com
+proxy-groups:
+- name: 代理
+  type: select
+  proxies:
+  - 🇭🇰 香港01
+  - 🇭🇰 香港02
+  - 🇯🇵 日本01
+  - 🇯🇵 日本02
+  - 🇸🇬 新加坡01
+  - 🇸🇬 新加坡02
+  - 🇹🇼 台湾01
+  - 🇺🇸 美国01
+  - 🇺🇸 美国02
+  - 自动选择
+- name: 自动选择
+  type: url-test
+  proxies:
+  - 🇭🇰 香港01
+  - 🇭🇰 香港02
+  - 🇯🇵 日本01
+  - 🇯🇵 日本02
+  - 🇸🇬 新加坡01
+  - 🇸🇬 新加坡02
+  - 🇹🇼 台湾01
+  - 🇺🇸 美国01
+  - 🇺🇸 美国02
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- DOMAIN-SUFFIX,services.googleapis.cn,代理
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,代理
+- DOMAIN-KEYWORD,google,代理
+- DOMAIN-KEYWORD,gmail,代理
+- DOMAIN-KEYWORD,youtube,代理
+- DOMAIN-KEYWORD,facebook,代理
+- DOMAIN-KEYWORD,twitter,代理
+- DOMAIN-KEYWORD,instagram,代理
+- DOMAIN-KEYWORD,github,代理
+- DOMAIN-SUFFIX,github.com,代理
+- DOMAIN-SUFFIX,githubusercontent.com,代理
+- DOMAIN-KEYWORD,openai,代理
+- DOMAIN-KEYWORD,chatgpt,代理
+- DOMAIN-KEYWORD,Claude,代理
+- DOMAIN-SUFFIX,twimg.com,代理
+- DOMAIN-SUFFIX,blobstore.apple.com,DIRECT
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-SUFFIX,126.com,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,douban.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,baidu.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,代理
