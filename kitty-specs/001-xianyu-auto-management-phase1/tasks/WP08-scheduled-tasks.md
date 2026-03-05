@@ -1,7 +1,7 @@
 ---
 work_package_id: WP08
 title: 定时任务模块
-lane: "doing"
+lane: "for_review"
 dependencies: [WP02, WP03]
 base_branch: 001-xianyu-auto-management-phase1-WP07
 base_commit: 01bc0f5b2ed20b0f7b4d8898c1999619dabb0ae3
@@ -88,3 +88,4 @@ spec-kitty implement WP08 --base WP03
 ## Activity Log
 
 - 2026-03-05T07:17:41Z – claude-code – shell_pid=41372 – lane=doing – Assigned agent via workflow command
+- 2026-03-05T07:21:05Z – claude-code – shell_pid=41372 – lane=for_review – Ready for review: 定时任务模块已完成
