@@ -1,12 +1,16 @@
 ---
-work_package_id: "WP01"
-title: "项目基础设置"
-lane: "planned"
+work_package_id: WP01
+title: 项目基础设置
+lane: "doing"
 dependencies: []
-subtasks: ["T001", "T002", "T003", "T004", "T005"]
+base_branch: master
+base_commit: 6a45668897f403c3a61fce4c2b3d5a30dc1b41ce
+created_at: '2026-03-05T05:57:07.563867+00:00'
+subtasks: [T001, T002, T003, T004, T005]
+shell_pid: "32364"
 history:
-  - date: "2026-03-05"
-    action: "created"
+- date: '2026-03-05'
+  action: created
 ---
 
 # WP01: 项目基础设置
