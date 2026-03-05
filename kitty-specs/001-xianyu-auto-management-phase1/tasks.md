@@ -35,11 +35,11 @@
 **Estimated Size**: ~350 lines
 
 **Included Subtasks**:
-- [ ] T001: 创建后端项目结构 (backend/src/)
-- [ ] T002: 创建前端项目结构 (frontend/)
-- [ ] T003: 配置 Docker Compose
-- [ ] T004: 配置环境变量 (.env.example)
-- [ ] T005: 安装基础依赖
+- [x] T001: 创建后端项目结构 (backend/src/)
+- [x] T002: 创建前端项目结构 (frontend/)
+- [x] T003: 配置 Docker Compose
+- [x] T004: 配置环境变量 (.env.example)
+- [x] T005: 安装基础依赖
 
 **Implementation**:
 1. 初始化后端 Python 项目结构
