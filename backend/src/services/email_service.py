@@ -7,6 +7,9 @@ from email.mime.multipart import MIMEMultipart
 import aiosmtplib
 from typing import Optional
 import logging
+from datetime import datetime
+
+from src.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -15,10 +18,11 @@ class EmailService:
     """邮件服务"""
 
     def __init__(self):
-        self.smtp_host = os.getenv("SMTP_HOST", "")
-        self.smtp_port = int(os.getenv("SMTP_PORT", "587"))
-        self.smtp_user = os.getenv("SMTP_USER", "")
-        self.smtp_password = os.getenv("SMTP_PASSWORD", "")
+        self.smtp_host = settings.smtp_host or os.getenv("SMTP_HOST", "")
+        self.smtp_port = settings.smtp_port or int(os.getenv("SMTP_PORT", "465"))
+        self.smtp_user = settings.smtp_user or os.getenv("SMTP_USER", "")
+        self.smtp_password = settings.smtp_password or os.getenv("SMTP_PASSWORD", "")
+        self.smtp_use_ssl = getattr(settings, 'smtp_use_ssl', True) or os.getenv("SMTP_USE_SSL", "true").lower() == "true"
         self.from_email = self.smtp_user
 
     def is_configured(self) -> bool:
@@ -57,13 +61,17 @@ class EmailService:
             mime_type = 'html' if html else 'plain'
             msg.attach(MIMEText(body, mime_type, 'utf-8'))
 
+            # 根据配置决定是否使用 TLS/SSL
+            use_tls = not self.smtp_use_ssl  # 如果使用 SSL，则不需要 TLS
+
             await aiosmtplib.send(
                 msg,
                 hostname=self.smtp_host,
                 port=self.smtp_port,
                 username=self.smtp_user,
                 password=self.smtp_password,
-                tls=True
+                tls=use_tls,
+                ssl=self.smtp_use_ssl
             )
 
             logger.info(f"邮件发送成功: {to}")
@@ -147,6 +155,3 @@ def get_email_service() -> EmailService:
     if _email_service is None:
         _email_service = EmailService()
     return _email_service
-
-
-from datetime import datetime
